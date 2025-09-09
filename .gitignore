@@ -1,0 +1,19 @@
+# Compiled binaries and executables
+cpp/bsm_greeks
+go/bsm_greeks
+java/*.class
+rust/bsm_greeks
+ts/bsm_greeks.js
+ts/node_modules/
+ts/package-lock.json
+
+# Python virtual environment
+python/.venv/
+
+# OS files
+.DS_Store
+
+# Other
+*.o
+*.exe
+*.out

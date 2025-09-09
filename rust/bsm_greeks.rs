@@ -68,7 +68,7 @@ fn price_and_greeks_bsm(inputs: &BSMInputs, theta_basis: f64) -> BSMOutputs {
     let exp_qt = (-q * t).exp();
     let exp_rt = (-r * t).exp();
     let n_d1 = norm_pdf(d1);
-    let n_d2 = norm_pdf(d2);
+    let _n_d2 = norm_pdf(d2);
     let n_md1 = norm_cdf(-d1);
     let n_md2 = norm_cdf(-d2);
     let n_d1_cdf = norm_cdf(d1);

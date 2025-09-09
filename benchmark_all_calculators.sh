@@ -26,8 +26,8 @@ benchmark() {
   else
     bin_size="-"
   fi
-  # Time the execution (wrap in bash -c for complex commands)
-  exec_time=$( (/usr/bin/time -f "%e" bash -c "$run_cmd" > /dev/null) 2>&1 )
+  # Time the execution (portable: use 'command time -p' and parse 'real')
+  exec_time=$( (command time -p bash -c "$run_cmd" > /dev/null) 2>&1 | awk '/^real/ {print $2}')
   # Print result
   printf "%-18s %-12s %-12s %-12s\n" "$lang" "$exec_time" "$bin_size" "$notes"
   cd "$ROOT_DIR"

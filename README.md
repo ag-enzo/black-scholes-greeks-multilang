@@ -40,7 +40,7 @@ Each implementation computes the price and Greeks (Delta, Gamma, Vega, Theta, Rh
    This script will compile/run each implementation, measure execution time, and (where applicable) binary size, then print a summary table for easy comparison. No results are included here—run the script to see them on your system.
 
 ## Inputs & Outputs
-- All implementations use the same canonical example and conventions (see `new_guide_upd.md`).
+- All implementations use the same canonical example and conventions.
 - Outputs are printed to the terminal for easy comparison.
 
 ## Why?

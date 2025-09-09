@@ -10,6 +10,11 @@ ts/package-lock.json
 # Python virtual environment
 python/.venv/
 
+# Guides
+guide.md
+guide_math.md 
+new_guide_upd.md 
+
 # OS files
 .DS_Store
 

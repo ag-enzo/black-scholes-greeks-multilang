@@ -26,8 +26,8 @@ benchmark() {
   else
     bin_size="-"
   fi
-  # Time the execution
-  exec_time=$( (/usr/bin/time -f "%e" $run_cmd > /dev/null) 2>&1 )
+  # Time the execution (wrap in bash -c for complex commands)
+  exec_time=$( (/usr/bin/time -f "%e" bash -c "$run_cmd" > /dev/null) 2>&1 )
   # Print result
   printf "%-18s %-12s %-12s %-12s\n" "$lang" "$exec_time" "$bin_size" "$notes"
   cd "$ROOT_DIR"
@@ -39,9 +39,9 @@ benchmark "cpp" "g++ -std=c++11 -o bsm_greeks bsm_greeks.cpp" "./bsm_greeks" "bs
 benchmark "go" "" "go run bsm_greeks.go" "" "Interpreted/Go run"
 # Python
 if [ -d "$ROOT_DIR/python/.venv" ]; then
-  benchmark "python" "" "source .venv/bin/activate && python bsm_greeks.py && deactivate" "" "Python venv"
+  benchmark "python" "" 'source .venv/bin/activate && python bsm_greeks.py && deactivate' "" "Python venv"
 else
-  benchmark "python" "" "python3 bsm_greeks.py" "" "System Python"
+  benchmark "python" "" 'python3 bsm_greeks.py' "" "System Python"
 fi
 # TypeScript/Node.js
 if [ -f "$ROOT_DIR/ts/bsm_greeks.js" ]; then

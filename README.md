@@ -25,12 +25,19 @@ Each implementation computes the price and Greeks (Delta, Gamma, Vega, Theta, Rh
 
 ## How to Use
 
+
 1. See each subfolder's `README.md` for language-specific build/run instructions.
 2. To run all calculators and compare outputs, use:
    ```sh
    ./run_all_calculators.sh
    ```
    (You may need to `chmod +x run_all_calculators.sh` first.)
+
+3. To benchmark all implementations (execution time and binary size), use:
+   ```sh
+   ./benchmark_all_calculators.sh
+   ```
+   This script will compile/run each implementation, measure execution time, and (where applicable) binary size, then print a summary table for easy comparison. No results are included here—run the script to see them on your system.
 
 ## Inputs & Outputs
 - All implementations use the same canonical example and conventions (see `new_guide_upd.md`).
